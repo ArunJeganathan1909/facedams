@@ -1,0 +1,61 @@
+.sidebar {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-categories{
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.sidebar-contant {
+    display: flexbox;
+    margin: auto;
+}
+
+.sidebar-contant a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 10px 10px;
+    border: 1px solid black;
+    margin-top: 15px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.sidebar-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    align-items:right;
+    padding-left: 40px;
+}
+
+
+.login-contant {
+    margin-bottom: auto;
+    padding-bottom: 20px;
+}
+
+.login-contant a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.login-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    align-items:right;
+}
