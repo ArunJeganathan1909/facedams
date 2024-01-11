@@ -1,0 +1,19 @@
+.display {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 100%;
+
+}
+.display-contant-header {
+    display: flex;
+    height: 10%;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-contant-display {
+    display: flex;
+    height: 90%;
+}

@@ -17,7 +17,7 @@
 .index-sidebar {
     display: flex;
     width: 15%;
-    background-color: #95c8f1;
+    background-color: #e4f8fe;
     margin-left: 0px;
     padding: 10px;
     border-radius: 20px;
@@ -27,8 +27,10 @@
 .index-displayPage {
     display: flex;
     width: 90%;
-    background-color: #95c8f1;
+    background-color: #e4f8fe;
     border-radius: 20px;
     margin-left: 5px;
     padding: 10px;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,0 +1,20 @@
+.AdminNavBar {
+    display: flex;
+    align-items: center;    
+    margin-left: auto;
+    border-radius: 20px;
+    background-color: #95c8f1;
+    padding: 5px;
+    width: 100%;
+}
+
+.Admin-contant {
+    margin-left: 20px; 
+    margin-right: 20px;    
+}
+
+.Admin-contant a {
+    text-decoration: none;
+    color: black;
+    margin-left: auto;
+}
