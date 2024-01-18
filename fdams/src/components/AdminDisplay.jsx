@@ -9,10 +9,10 @@ const AdminDisplay = () => {
   return (
     <Routes>
       <Route path="/Home" element={<h1>Welcome to Admin Panel</h1>} />
-      <Route path="/Staff" element={<AdminStaff />} />
-      <Route path="/Students" element={<AdminStudent />} />
-      <Route path="/Courses" element={<AdminCourses />} />
-      <Route path="/Requests" element={<AdminRequests />} />
+      <Route path="/Staff/*" Component={AdminStaff} />
+      <Route path="/Students/*" Component={AdminStudent} />
+      <Route path="/Courses/*" Component={AdminCourses} />
+      <Route path="/Requests/*" Component={AdminRequests} />
       {/* Add more routes as needed */}
     </Routes>
   );

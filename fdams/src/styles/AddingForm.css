@@ -1,0 +1,83 @@
+.adding-form {
+  overflow: hidden;
+}
+
+/* Style for the form container */
+.adding-form {
+  width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  position: relative;
+  overflow-y: auto;
+}
+
+.adding-heading {
+  text-align: center;
+  margin-top: 0px;
+  font-size: 40px;
+}
+
+.adding-form-container {
+  align-items: center;
+}
+
+/* Style for form labels */
+.adding-form-label {
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adding-form-text {
+  justify-content: left;
+  width: 20%;
+}
+
+/* Style for form input fields */
+.adding-form-input {
+  justify-content: end;
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.adding-form-select {
+  justify-content: end;
+  width: 75%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  margin-left: 25px;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+/* Style for the role dropdown */
+.adding-form-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style for the Add button */
+.adding-form button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.adding-form button:hover {
+  background-color: #45a049;
+}

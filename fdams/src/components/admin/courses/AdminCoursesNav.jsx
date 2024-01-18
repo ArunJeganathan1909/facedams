@@ -6,19 +6,19 @@ const AdminCoursesNav = () => {
   return (
     <div className="displayNavBar-header">
       <div className="displayNavBar-contant">
-        <Link>Add Course</Link>
+        <Link to="/Admin/Courses/AddCourse">Add Course</Link>
       </div>
       <div className="displayNavBar-contant">
-        <Link>1st Year</Link>
+        <Link to="/Admin/Courses/1st_Year">1st Year</Link>
       </div>
       <div className="displayNavBar-contant">
-        <Link>2nd Year</Link>
+        <Link to="/Admin/Courses/2nd_Year">2nd Year</Link>
       </div>
       <div className="displayNavBar-contant">
-        <Link>3rd Year</Link>
+        <Link to="/Admin/Courses/3rd_Year">3rd Year</Link>
       </div>
       <div className="displayNavBar-contant">
-        <Link>4th year</Link>
+        <Link to="/Admin/Courses/4th_Year">4th year</Link>
       </div>
     </div>
   );

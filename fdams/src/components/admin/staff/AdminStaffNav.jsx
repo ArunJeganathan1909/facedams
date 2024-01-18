@@ -6,13 +6,13 @@ const AdminStaffNav = () => {
   return (
     <div className="displayNavBar-header">
       <div className="displayNavBar-contant">
-        <Link>Add Staff</Link>
+        <Link to="/Admin/Staff/AddStaff">Add Staff</Link>
       </div>
       <div className="displayNavBar-contant">
-        <Link>Academic Staff</Link>
+        <Link to="/Admin/Staff/AcademicStaff">Academic Staff</Link>
       </div>
       <div className="displayNavBar-contant">
-        <Link>Non Academic Staff</Link>
+        <Link to="/Admin/Staff/NonAcademicStaff">Non Academic Staff</Link>
       </div>
     </div>
   );

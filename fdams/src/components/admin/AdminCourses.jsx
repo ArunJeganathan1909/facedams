@@ -1,6 +1,7 @@
 import React from "react";
 import AdminCoursesNav from "./courses/AdminCoursesNav";
 import "../../styles/layout/DisplayContant.css";
+import AdminCourseDisplay from "./courses/AdminCourseDisplay";
 
 const AdminCourses = () => {
   return (
@@ -8,7 +9,9 @@ const AdminCourses = () => {
       <div className="display-contant-header">
         <AdminCoursesNav />
       </div>
-      <div className="display-contant-display">Admin Courses display</div>
+      <div className="display-contant-display">
+        <AdminCourseDisplay />
+      </div>
     </div>
   );
 };

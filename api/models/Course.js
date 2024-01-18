@@ -12,8 +12,16 @@ const CourseSchema = new Schema({
   },
   yearOfStudy: {
     type: String,
-    requiredl: true,
+    required: true,
   },
+  subject : {
+    type : String,
+    required : true
+  },
+  lecturerIdNo: {
+    type : String,
+    required : true    
+  }
 });
 
 const CourseModel = mongoose.model("Course", CourseSchema);
