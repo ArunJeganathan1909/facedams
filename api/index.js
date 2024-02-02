@@ -5,10 +5,10 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 
-
 const Student = require("./models/Student");
 const Staff = require("./models/Staff");
 const Course = require("./models/Course");
+const Request = require("./models/Request");
 const FaceData = require("./models/FaceData");
 
 const app = express();
@@ -110,7 +110,8 @@ app.post("/staff/register", async (request, response) => {
 
 // Register course
 app.post("/course/register", async (request, response) => {
-  const { name, courseCode, yearOfStudy, subject, lecturerIdNo } = request.body;
+  const { name, courseCode, yearOfStudy, subject, lecturerIdNo, lectureCode } =
+    request.body;
 
   try {
     const courseDoc = await Course.create({
@@ -119,6 +120,7 @@ app.post("/course/register", async (request, response) => {
       yearOfStudy,
       subject,
       lecturerIdNo,
+      lectureCode,
     });
     response.json(courseDoc);
   } catch (error) {
@@ -181,6 +183,7 @@ app.post("/student/login", async (request, response) => {
   }
 });
 
+// Logout
 app.post("/logout", async (request, response) => {
   response.clearCookie("token").json({ message: "Logged out successfully" });
 });
@@ -204,8 +207,30 @@ app.get("/staff", authenticateToken, async (request, response) => {
     const staff = await Staff.findById(id);
 
     if (staff) {
-      const { name, email, mobile, _id } = staff;
-      response.json({ name, email, mobile, _id });
+      const {
+        name,
+        email,
+        idno,
+        department,
+        role,
+        courses,
+        userType,
+        admin,
+        mobile,
+        _id,
+      } = staff;
+      response.json({
+        name,
+        email,
+        idno,
+        department,
+        role,
+        courses,
+        userType,
+        admin,
+        mobile,
+        _id,
+      });
     } else {
       response.status(404).json({ message: "User not found" });
     }
@@ -221,8 +246,28 @@ app.get("/student", authenticateToken, async (request, response) => {
     const student = await Student.findById(id);
 
     if (student) {
-      const { name, email, mobile, _id } = student;
-      response.json({ name, email, mobile, _id });
+      const {
+        name,
+        email,
+        regno,
+        yearOfStudy,
+        courses,
+        subjects,
+        userType,
+        mobile,
+        _id,
+      } = student;
+      response.json({
+        name,
+        email,
+        regno,
+        yearOfStudy,
+        courses,
+        subjects,
+        userType,
+        mobile,
+        _id,
+      });
     } else {
       response.status(404).json({ message: "User not found" });
     }
@@ -263,7 +308,29 @@ app.put("/staff/:id", async (request, response) => {
 
     const updatedStaff = await existingStaff.save();
 
-    
+    response.json(updatedStaff);
+  } catch (error) {
+    response.status(422).json(error);
+  }
+});
+
+app.put("/StaffAdmin", async (request, response) => {
+  const { id, admin } = request.body;
+
+  try {
+    // Find the staff member by ID
+    const existingStaff = await Staff.findById(id);
+
+    if (!existingStaff) {
+      return response.status(404).json({ message: "Staff not found" });
+    }
+
+    // Update the admin status
+    existingStaff.admin = admin;
+
+    // Save the updated staff information
+    const updatedStaff = await existingStaff.save();
+
     response.json(updatedStaff);
   } catch (error) {
     response.status(422).json(error);
@@ -296,7 +363,8 @@ app.get("/course/:id", async (request, response) => {
 // Update course information
 app.put("/course/:id", async (request, response) => {
   const courseId = request.params.id;
-  const { name, courseCode, yearOfStudy, subject, lecturerIdNo } = request.body;
+  const { name, courseCode, yearOfStudy, subject, lecturerIdNo, lectureCode } =
+    request.body;
 
   try {
     // Find the staff member by ID
@@ -312,6 +380,7 @@ app.put("/course/:id", async (request, response) => {
     existingCourse.yearOfStudy = yearOfStudy || existingCourse.yearOfStudy;
     existingCourse.subject = subject || existingCourse.subject;
     existingCourse.lecturerIdNo = lecturerIdNo || existingCourse.lecturerIdNo;
+    existingCourse.lectureCode = lectureCode || existingCourse.lectureCode;
 
     // Update the password only if a new one is provided
 
@@ -340,9 +409,6 @@ app.delete("/course/:id", async (request, response) => {
     response.status(500).json({ error: "Internal Server Error" });
   }
 });
-
-
-
 
 app.get("/student/:id", async (request, response) => {
   const { id } = request.params;
@@ -397,8 +463,6 @@ app.put("/student/:id", async (request, response) => {
       await existingStudent.save();
     }
 
-    
-
     response.json(updatedStudent);
   } catch (error) {
     response.status(422).json(error);
@@ -407,7 +471,43 @@ app.put("/student/:id", async (request, response) => {
 
 // ... (unchanged)
 
+// Create a request
+app.post("/request", authenticateToken, async (request, response) => {
+  const {
+    name,
+    requestTitle: requestTitleText,
+    request: requestText,
+    userType,
+    owner,
+  } = request.body;
 
+  try {
+    // Validate userType and owner (add more validation as needed)
+    if (!userType || !owner) {
+      return response
+        .status(422)
+        .json({ error: "userType and owner are required" });
+    }
+
+    // Create a new request
+    const newRequest = await Request.create({
+      name,
+      requestTitle: requestTitleText,
+      request: requestText,
+      owner, // Convert owner to ObjectId
+      userType,
+    });
+
+    response.json(newRequest);
+  } catch (error) {
+    console.error("Error creating request:", error);
+    response.status(422).json({ error: "Failed to process the request" });
+  }
+});
+
+app.get("/request", async (request, response) => {
+  response.json(await Request.find());
+});
 
 app.use((error, request, response, next) => {
   console.error(error);

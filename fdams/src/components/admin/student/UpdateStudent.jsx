@@ -101,7 +101,9 @@ const UpdateStudent = () => {
             onChange={handleSubjectChange}
             className="adding-form-select"
           >
-            <option value="pure_Mathematics" typeof="checkbox">Pure Mathematics</option>
+            <option value="pure_Mathematics" typeof="checkbox">
+              Pure Mathematics
+            </option>
             <option value="applied_Mathematics">Applied Mathematics</option>
             <option value="statistics">Statistics</option>
             <option value="physics">Physics</option>

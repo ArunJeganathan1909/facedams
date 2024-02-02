@@ -6,10 +6,10 @@ const AdminRequestsNav = () => {
   return (
     <div className="displayNavBar-header">
       <div className="displayNavBar-contant">
-        <Link>Staffs Requests</Link>
+        <Link to="/Admin/Requests/Staffs_Requests">Staffs Requests</Link>
       </div>
       <div className="displayNavBar-contant">
-        <Link>Students Requests</Link>
+        <Link to="/Admin/Requests/Students_Requests">Students Requests</Link>
       </div>
     </div>
   );

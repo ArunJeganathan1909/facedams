@@ -7,8 +7,8 @@ import "../styles/LoginPage.css";
 const LoginPage = () => {
   return (
     <div>
-      <Link to='/Login/staffLogin'>Staff</Link>
-      <Link to='/Login/studentLogin'>Student</Link>
+      <Link to="/Login/staffLogin">Staff</Link>
+      <Link to="/Login/studentLogin">Student</Link>
     </div>
   );
 };

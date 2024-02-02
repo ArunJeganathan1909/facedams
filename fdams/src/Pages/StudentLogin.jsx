@@ -19,8 +19,7 @@ const StudentLogin = () => {
       if (response.data !== "notfound" && response.data !== "Password not ok") {
         // Handle successful login, e.g., set user context or redirect
         console.log("Login successful");
-        navigate('/Students')
-        navi
+        navigate("/Students");
       } else {
         // Handle login failure
         console.log("Login failed");

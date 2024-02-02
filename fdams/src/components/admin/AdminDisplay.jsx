@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import AdminStaff from "./admin/AdminStaff";
-import AdminStudent from "./admin/AdminStudent";
-import AdminCourses from "./admin/AdminCourses";
-import AdminRequests from "./admin/AdminRequests";
+import AdminStaff from "./AdminStaff";
+import AdminStudent from "./AdminStudent";
+import AdminCourses from "./AdminCourses";
+import AdminRequests from "./AdminRequests";
 
 const AdminDisplay = () => {
   return (

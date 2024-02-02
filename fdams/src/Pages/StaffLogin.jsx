@@ -19,8 +19,8 @@ const StaffLogin = () => {
       if (response.data !== "notfound" && response.data !== "Password not ok") {
         // Handle successful login, e.g., set user context or redirect
         console.log("Login successful");
-        navigate('/Staffs')
-        navi
+        navigate("/Staffs");
+        navi;
       } else {
         // Handle login failure
         console.log("Login failed");

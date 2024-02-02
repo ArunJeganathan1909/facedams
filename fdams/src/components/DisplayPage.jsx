@@ -15,8 +15,8 @@ const DisplayPage = () => {
     <Routes>
       <Route path="/Home" Component={HomePage} />
       <Route path="/Admin/*" Component={AdminPage} />
-      <Route path="/Staffs" Component={StaffHomePage} />
-      <Route path="/Students" Component={StudentHomePage} />
+      <Route path="/Staffs/*" Component={StaffPage} />
+      <Route path="/Students/*" Component={StudentPage} />
       <Route path="/Login" Component={LoginPage} />
       <Route path="/Login/staffLogin" Component={StaffLogin} />
       <Route path="/Login/studentLogin" Component={StudentLogin} />

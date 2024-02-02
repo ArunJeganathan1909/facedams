@@ -55,7 +55,7 @@ const Sidebar = () => {
           </Link>
         </div>
         <div className="sidebar-contant">
-          <Link to={"Staffs"}>
+          <Link to={"Staffs/Home"}>
             Staffs
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ const Sidebar = () => {
           </Link>
         </div>
         <div className="sidebar-contant">
-          <Link to={"Students"}>
+          <Link to={"Students/Home"}>
             Students
             <svg
               xmlns="http://www.w3.org/2000/svg"

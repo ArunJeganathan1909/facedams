@@ -36,8 +36,8 @@ const StaffSchema = new Schema({
     type: String,
     default: "staff", // Set default to "staff" for staff users
   },
-  admin : {
-    type : Boolean,
+  admin: {
+    type: Boolean,
     default: false,
   },
   /*faceData: {

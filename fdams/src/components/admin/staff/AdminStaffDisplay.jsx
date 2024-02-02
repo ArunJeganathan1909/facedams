@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import AddStaff from "./AddStaff";
 import StaffCategories from "./StaffCategories";
 import UpdateStaff from "./UpdateStaff";
-import WebcamCapture from "../../WebcamCapture";
 
 const AdminStaffDisplay = () => {
   return (

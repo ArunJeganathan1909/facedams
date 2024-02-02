@@ -9,19 +9,24 @@ const CourseSchema = new Schema({
   courseCode: {
     type: String,
     required: true,
+    unique: true,
   },
   yearOfStudy: {
     type: String,
     required: true,
   },
-  subject : {
-    type : String,
-    required : true
+  subject: {
+    type: String,
+    required: true,
   },
   lecturerIdNo: {
-    type : String,
-    required : true    
-  }
+    type: String,
+    required: true,
+  },
+  lectureCode: {
+    type: String,
+    required: true,
+  },
 });
 
 const CourseModel = mongoose.model("Course", CourseSchema);

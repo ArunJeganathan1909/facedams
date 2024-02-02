@@ -1,22 +1,19 @@
-.displayNavBar-header {
+.page-contant-NavBar {
   display: flex;
   align-items: center;
   margin-left: auto;
   border-radius: 20px;
+  background-color: #95c8f1;
   padding: 5px;
   width: 100%;
-  justify-content: center;
 }
 
-.displayNavBar-contant {
+.page-contant-contant {
   margin-left: 20px;
   margin-right: 20px;
-  padding: 10px 20px;
-  border: 2px solid #95c8f1;
-  border-radius: 20px;
 }
 
-.displayNavBar-contant a {
+.page-contant-contant a {
   text-decoration: none;
   color: black;
   margin-left: auto;

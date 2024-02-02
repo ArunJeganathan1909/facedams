@@ -8,6 +8,7 @@ const AddCourse = () => {
   const [yearOfStudy, setYearOfStudy] = useState("1stYear");
   const [subject, setSubject] = useState("computerScience");
   const [lecturerIdNo, setLecturerIdNo] = useState();
+  const [lectureCode, setLectureCode] = useState();
 
   const handleSubjectChange = (e) => {
     setSubject(e.target.value);
@@ -27,6 +28,7 @@ const AddCourse = () => {
         yearOfStudy,
         subject,
         lecturerIdNo,
+        lectureCode,
       });
       alert("Course added successfully");
     } catch (error) {
@@ -97,6 +99,17 @@ const AddCourse = () => {
             placeholder="Enter the Id No"
             value={lecturerIdNo}
             onChange={(e) => setLecturerIdNo(e.target.value)}
+            className="adding-form-input"
+          />
+        </label>
+
+        <label className="adding-form-label">
+          <span className="adding-form-text">Lecture Code </span>
+          <input
+            type="text"
+            placeholder="Enter the code"
+            value={lectureCode}
+            onChange={(e) => setLectureCode(e.target.value)}
             className="adding-form-input"
           />
         </label>

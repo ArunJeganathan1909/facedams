@@ -9,6 +9,7 @@ const UpdateCourse = () => {
   const [yearOfStudy, setYearOfStudy] = useState("");
   const [subject, setSubject] = useState("");
   const [lecturerIdNo, setLecturerIdNo] = useState();
+  const [lectureCode, setLectureCode] = useState();
 
   useEffect(() => {
     if (!id) {
@@ -20,6 +21,7 @@ const UpdateCourse = () => {
       setYearOfStudy(response.data.yearOfStudy);
       setSubject(response.data.subject);
       setLecturerIdNo(response.data.lecturerIdNo);
+      setLectureCode(response.data.lectureCode);
     });
   }, [id]);
 
@@ -111,6 +113,17 @@ const UpdateCourse = () => {
             placeholder="Enter the Id No"
             value={lecturerIdNo}
             onChange={(e) => setLecturerIdNo(e.target.value)}
+            className="adding-form-input"
+          />
+        </label>
+
+        <label className="adding-form-label">
+          <span className="adding-form-text">Lecture Code </span>
+          <input
+            type="text"
+            placeholder="Enter the code"
+            value={lectureCode}
+            onChange={(e) => setLectureCode(e.target.value)}
             className="adding-form-input"
           />
         </label>

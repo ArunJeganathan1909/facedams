@@ -1,36 +1,36 @@
 .index-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .index-pageHeader {
-    display: flex;
-    height: 20vh;
-    margin-bottom: 10px
+  display: flex;
+  height: 20vh;
+  margin-bottom: 10px;
 }
 
 .index-pageBody {
-    display: flex;
-    height: 78.5vh;
+  display: flex;
+  height: 78.5vh;
 }
 
 .index-sidebar {
-    display: flex;
-    width: 15%;
-    background-color: #e4f8fe;
-    margin-left: 0px;
-    padding: 10px;
-    border-radius: 20px;
-    margin-right: 5px;
+  display: flex;
+  width: 15%;
+  background-color: #e4f8fe;
+  margin-left: 0px;
+  padding: 10px;
+  border-radius: 20px;
+  margin-right: 5px;
 }
 
 .index-displayPage {
-    display: flex;
-    width: 90%;
-    background-color: #e4f8fe;
-    border-radius: 20px;
-    margin-left: 5px;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  width: 90%;
+  background-color: #e4f8fe;
+  border-radius: 20px;
+  margin-left: 5px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
